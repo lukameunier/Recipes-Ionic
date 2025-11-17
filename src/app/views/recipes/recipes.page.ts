@@ -5,13 +5,14 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonCol } from '@ionic/angu
 import { RecipesRepository } from 'src/app/repository/recipes-repository';
 import { RecipeComponent} from 'src/app/views/recipe/recipe.component';
 import { Recipe } from 'src/app/data/recipe';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.page.html',
   styleUrls: ['./recipes.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonCol, RecipeComponent]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonCol, RecipeComponent, RouterLink]
 })
 export class RecipesPage {
 
@@ -20,8 +21,4 @@ export class RecipesPage {
   }
 
   constructor(private recipesRepository: RecipesRepository) {}
-
-  goToInfosPage() {
-    console.log("Coucou");
-  }
 }

@@ -7,7 +7,7 @@
 <ion-content [fullscreen]="true" class="ion-padding">
   <ion-col>
     @for (recipe of recipes; track recipe.name) {
-      <app-recipe [recipe]="recipe" (click)=goToInfosPage()></app-recipe>
+      <app-recipe [recipe]="recipe" [routerLink]="['../recipe-details', recipe.name]"></app-recipe>
     } 
   </ion-col>
 </ion-content>
