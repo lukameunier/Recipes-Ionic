@@ -1,13 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>recipes</ion-title>
+    <ion-title>Recipes</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">recipes</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-col>
+    @for (item of recipes; track item.name) {
+      <app-recipe [recipe]="item"></app-recipe>
+    } 
+  </ion-col>
 </ion-content>

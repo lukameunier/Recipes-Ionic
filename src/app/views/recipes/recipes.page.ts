@@ -1,20 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonCol } from '@ionic/angular/standalone';
+import { RecipesRepository } from 'src/app/repository/recipes-repository';
+import { RecipeComponent} from 'src/app/views/recipe/recipe.component';
+import { Recipe } from 'src/app/data/recipe';
 
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.page.html',
   styleUrls: ['./recipes.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonCol, RecipeComponent]
 })
-export class RecipesPage implements OnInit {
+export class RecipesPage {
 
-  constructor() { }
-
-  ngOnInit() {
+  get recipes(): Recipe[] {
+    return this.recipesRepository.recipes.filter (
+      (recipe) => recipe.name
+    )
   }
 
+  constructor(private recipesRepository: RecipesRepository) {}
 }
