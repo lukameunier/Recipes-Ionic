@@ -1,13 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>recipe-details</ion-title>
+    <ion-title>Recipe of {{recipe?.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">recipe-details</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-header collapse="condense"></ion-header>
+
+  <ion-col>
+    <ion-row>
+      <ion-label class="preparation_time">Preparation Time: {{recipe?.prep_time}} mins</ion-label>
+      <ion-label class="cook_time">Cooking Time: {{recipe?.cook_time}} mins</ion-label>
+      <ion-button class="edit_button">Edit recipe</ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-label class="servings">Servings: {{recipe?.servings}}</ion-label>
+      <ion-button class="minus_button">-</ion-button>
+      <ion-button class="plus_button">+</ion-button>
+    </ion-row>
+
+    <ion-img [src]="recipe?.img" alt="Image of the {{recipe?.name}}" class="recipe_img"></ion-img>
+    <ion-button class="edit_img"></ion-button>
+
+    <ion-label class="ingredients_label">Ingredients :</ion-label>
+    <ion-list class="ingredients_list"></ion-list>
+
+    <ion-label class="directions_label">Directions :</ion-label>
+    <ion-list class="directions_list"></ion-list>
+  </ion-col>
 </ion-content>
