@@ -16,10 +16,12 @@ import { Recipe } from 'src/app/data/recipe';
 export class RecipesPage {
 
   get recipes(): Recipe[] {
-    return this.recipesRepository.recipes.filter (
-      (recipe) => recipe.name
-    )
+    return this.recipesRepository.recipes;
   }
 
   constructor(private recipesRepository: RecipesRepository) {}
+
+  goToInfosPage() {
+    console.log("Coucou");
+  }
 }

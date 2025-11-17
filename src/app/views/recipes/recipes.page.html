@@ -6,8 +6,8 @@
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <ion-col>
-    @for (item of recipes; track item.name) {
-      <app-recipe [recipe]="item"></app-recipe>
+    @for (recipe of recipes; track recipe.name) {
+      <app-recipe [recipe]="recipe" (click)=goToInfosPage()></app-recipe>
     } 
   </ion-col>
 </ion-content>

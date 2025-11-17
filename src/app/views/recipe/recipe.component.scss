@@ -1,6 +1,9 @@
-.ion-row {
-    margin-bottom: 16px;
+.recipe-row {
     align-items: center;
+}
+
+.recipe-card:hover {
+    background-color: red;
 }
 
 .img {
@@ -14,6 +17,8 @@
     display: flex;
     flex-direction: column;
     margin-left: 12px;
+    height: 100px;
+    justify-content: space-between;
 }
 
 .name {

@@ -1,8 +1,10 @@
-<ion-row>
-  <ion-img [src]="recipe.img" alt="Image of the recipe" class="img"></ion-img>
-  <ion-col class="infos">
-    <ion-label class="name">{{recipe.name}}</ion-label>
-    <ion-label class="preparation_time">Preparation : {{recipe.prep_time}} mins</ion-label>
-    <ion-label class="cook_time">Cooking : {{recipe.cook_time}} mins</ion-label>
-  </ion-col>
-</ion-row>
+<ion-card class="recipe-card">
+  <ion-row class="recipe-row">
+    <ion-img [src]="recipe.img" alt="Image of the {{recipe.name}}" class="img"></ion-img>
+    <ion-col class="infos">
+      <ion-label class="name">{{recipe.name}}</ion-label>
+      <ion-label class="preparation_time">Preparation : {{recipe.prep_time}} mins</ion-label>
+      <ion-label class="cook_time">Cooking : {{recipe.cook_time}} mins</ion-label>
+    </ion-col>
+  </ion-row>
+</ion-card>
