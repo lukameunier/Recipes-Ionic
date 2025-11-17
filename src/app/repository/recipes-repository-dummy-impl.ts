@@ -9,7 +9,7 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
   public recipes: Recipe[] = [
     {
       name: 'Simple Cake',
-      img: 'assets/simple-white-cake.jpg',
+      img: 'assets/simple-white-cake.png',
       prep_time: 10,
       cook_time: 30,
       servings: 12,
