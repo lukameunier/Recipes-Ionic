@@ -4,11 +4,15 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalo
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
+import { RecipesRepository } from './app/repository/recipes-repository';
+import { RecipesRepositoryDummyImpl } from './app/repository/recipes-repository-dummy-impl';
 
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
+
+    { provide: RecipesRepository, useClass: RecipesRepositoryDummyImpl },
   ],
 });
