@@ -9,6 +9,7 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
   public recipes: Recipe[] = [
     {
       name: 'Simple Cake',
+      img: 'assets/simple-white-cake.jpg',
       prep_time: 10,
       cook_time: 30,
       servings: 12,
@@ -28,6 +29,7 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
     },
     {
       name: 'Chocolate Cake',
+      img: 'assets/chocolate-cake.jpg',
       prep_time: 15,
       cook_time: 25,
       servings: 8,
@@ -47,6 +49,7 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
     },
     {
       name: 'Clafoutis',
+      img: 'assets/clafoutis.jpg',
       prep_time: 15,
       cook_time: 25,
       servings: 8,
