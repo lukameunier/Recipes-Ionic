@@ -1,10 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Edition of {{recipe?.name}}</ion-title>
+    <ion-title>Edition of {{recipe.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense"></ion-header>
+
+  <ion-input
+    label="Prep Time (mins)"
+    labelPlacement="stacked"
+    type="number"
+    [(ngModel)]="recipe.prep_time">
+  </ion-input>
+
+  <ion-input
+    label="Cook Time (mins)"
+    labelPlacement="stacked"
+    type="number"
+    [(ngModel)]="recipe.cook_time">
+  </ion-input>
+
+  <ion-input
+    label="Serving"
+    labelPlacement="stacked"
+    type="number"
+    [(ngModel)]="recipe.servings">
+  </ion-input>
+
+
+  @for (ingredient of recipe.ingredients; track ingredient.name) {
+    <ion-item>
+      <ion-input
+        label="{{ ingredient.name }} ({{ ingredient.unit }})"
+        labelPlacement="stacked"
+        [(ngModel)]="recipe.ingredients[$index].quantity">
+      </ion-input>
+    </ion-item>
+  }
 
 </ion-content>
