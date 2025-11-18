@@ -9,23 +9,41 @@
 
   <ion-col>
     <ion-row>
-      <ion-label class="preparation_time">Preparation Time: {{recipe?.prep_time}} mins</ion-label>
-      <ion-label class="cook_time">Cooking Time: {{recipe?.cook_time}} mins</ion-label>
+      <ion-col class="infos">
+        <ion-label class="preparation_time">Preparation Time: {{recipe?.prep_time}} mins</ion-label>
+        <ion-label class="cook_time">Cooking Time: {{recipe?.cook_time}} mins</ion-label>
+      </ion-col>
       <ion-button class="edit_button">Edit recipe</ion-button>
     </ion-row>
+
     <ion-row>
       <ion-label class="servings">Servings: {{recipe?.servings}}</ion-label>
-      <ion-button class="minus_button">-</ion-button>
-      <ion-button class="plus_button">+</ion-button>
-    </ion-row>
 
-    <ion-img [src]="recipe?.img" alt="Image of the {{recipe?.name}}" class="recipe_img"></ion-img>
-    <ion-button class="edit_img"></ion-button>
+      <ion-button class="minus_button">
+        <ion-icon slot="icon-only" name="remove"></ion-icon>
+      </ion-button>
+
+      <ion-button class="plus_button">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-row>
+    <ion-card class="img_edit_button_container">
+      <ion-img [src]="recipe?.img" alt="Image of the {{recipe?.name}}" class="recipe_img"></ion-img>
+      <ion-button class="edit_img"></ion-button>
+    </ion-card>
 
     <ion-label class="ingredients_label">Ingredients :</ion-label>
-    <ion-list class="ingredients_list"></ion-list>
+    <ion-list class="ingredients_list">
+      @for (item of recipe?.ingredients; track $index) {
+        <p>{{item}}</p>
+      }
+    </ion-list>
 
     <ion-label class="directions_label">Directions :</ion-label>
-    <ion-list class="directions_list"></ion-list>
+    <ion-list class="directions_list">
+      @for (step of recipe?.directions; track $index; let i = $index) {
+        <p><strong>Étape {{ i + 1 }} :</strong> {{ step }}</p>
+      }
+    </ion-list>
   </ion-col>
 </ion-content>

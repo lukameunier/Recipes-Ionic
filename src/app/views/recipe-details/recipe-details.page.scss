@@ -1,0 +1,38 @@
+$corner-radius: 12px;
+
+.img_edit_button_container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden
+}
+
+.recipe_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.edit_img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    z-index: 10;
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+.plus_button {
+  --border-radius: 0 #{$corner-radius} #{$corner-radius} 0;
+}
+
+.minus_button {
+  --border-radius: #{$corner-radius} 0 0 #{$corner-radius};
+}
