@@ -1,18 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {
-  IonContent, IonHeader, IonTitle, IonToolbar,
-  IonCol, IonRow, IonButton, IonLabel, IonImg, 
-  IonList, IonIcon, IonCard
-} from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonCol, IonRow, IonButton, IonLabel, IonImg, IonList, IonIcon, IonCard, IonFabButton } from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
 import { RecipesRepository } from 'src/app/repository/recipes-repository';
 import { Recipe } from 'src/app/data/recipe';
 import { Ingredient } from 'src/app/data/ingredient';
 import { RouterLink } from '@angular/router';
 import { addIcons } from 'ionicons';
-import { add, remove } from 'ionicons/icons';
+import { add, remove, imagesSharp } from 'ionicons/icons';
 
 
 @Component({
@@ -24,8 +20,8 @@ import { add, remove } from 'ionicons/icons';
     IonContent, IonHeader, IonTitle, IonToolbar,
     CommonModule, FormsModule, IonCol, IonRow,
     IonButton, IonLabel, IonImg, IonList, IonIcon,
-    RouterLink, IonCard
-  ],
+    RouterLink, IonCard, IonFabButton
+],
 })
 export class RecipeDetailsPage implements OnInit {
 
@@ -37,7 +33,7 @@ export class RecipeDetailsPage implements OnInit {
     private recipesRepository: RecipesRepository,
     private route: ActivatedRoute
   ) {
-    addIcons({add, remove});
+    addIcons({add, remove, imagesSharp});
   }
 
   ngOnInit() {

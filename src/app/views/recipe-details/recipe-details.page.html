@@ -8,7 +8,7 @@
   <ion-header collapse="condense"></ion-header>
 
   <ion-col>
-    <ion-row>
+    <ion-row class="first_row">
       <ion-col class="infos">
         <ion-label class="preparation_time">Preparation Time: {{recipe?.prep_time}} mins</ion-label>
         <ion-label class="cook_time">Cooking Time: {{recipe?.cook_time}} mins</ion-label>
@@ -17,7 +17,7 @@
     </ion-row>
 
     <ion-row>
-      <ion-row>
+      <ion-row class="servings_row">
 
         <ion-label class="servings">Servings: {{ currentServings }}</ion-label>
 
@@ -30,19 +30,27 @@
         </ion-button>
       </ion-row>
 
+      <ion-card class="img_edit_button_container">
+        <ion-img
+          [src]="recipe?.img"
+          class="recipe_img">
+        </ion-img>
+
+        <div class="edit_button_container">
+          <ion-fab-button size="small" class="edit_fab">
+            <ion-icon name="images-sharp"></ion-icon>
+          </ion-fab-button>
+        </div>
+      </ion-card>
+
     </ion-row>
-    <ion-card class="img_edit_button_container">
-      <ion-img [src]="recipe?.img" alt="Image of the {{recipe?.name}}" class="recipe_img"></ion-img>
-      <ion-button class="edit_img"></ion-button>
-    </ion-card>
 
     <ion-label class="ingredients_label">Ingredients :</ion-label>
     <ion-list class="ingredients_list">
 
       @for (ing of recipe?.ingredients; track ing.name) {
-        <p>
-          {{ getScaledQuantity(ing) | number:'1.0-2' }}
-          {{ ing.unit }} {{ ing.name }}
+        <p class="ingredient">
+          {{ getScaledQuantity(ing) | number:'1.0-2' }}{{ ing.unit }} {{ ing.name }}
         </p>
       }
 
@@ -51,7 +59,7 @@
     <ion-label class="directions_label">Directions :</ion-label>
     <ion-list class="directions_list">
       @for (step of recipe?.directions; track $index; let i = $index) {
-        <p><strong>Étape {{ i + 1 }} :</strong> {{ step }}</p>
+        <p class="steps"><strong>Étape {{ i + 1 }} :</strong> {{ step }}</p>
       }
     </ion-list>
   </ion-col>
