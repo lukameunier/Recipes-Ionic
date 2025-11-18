@@ -34,8 +34,8 @@
 
     <ion-label class="ingredients_label">Ingredients :</ion-label>
     <ion-list class="ingredients_list">
-      @for (item of recipe?.ingredients; track $index) {
-        <p>{{item}}</p>
+      @for (ing of recipe?.ingredients; track ing.name) {
+        <p>{{ capitalizeFirst(ing.name) }} {{ ing.quantity }}{{ ing.unit }}</p>
       }
     </ion-list>
 

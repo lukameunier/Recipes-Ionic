@@ -29,4 +29,9 @@ export class RecipeDetailsPage implements OnInit {
       this.recipe = this.recipesRepository.getRecipe(name);
     }
   }
+
+  capitalizeFirst(str: string): string {
+    if (!str) return str;
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
 }

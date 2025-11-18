@@ -14,12 +14,12 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
       cook_time: 30,
       servings: 12,
       ingredients: [
-        '200g sugar',
-        '125g butter',
-        '2 eggs',
-        '12,5cl milk',
-        '200g flour',
-        '10g baking powder'
+        { name: 'sugar', quantity: 200, unit: 'g' },
+        { name: 'butter', quantity: 125, unit: 'g' },
+        { name: 'egg', quantity: 2, unit: 'pcs' },
+        { name: 'milk', quantity: 12.5, unit: 'cl' },
+        { name: 'flour', quantity: 200, unit: 'g' },
+        { name: 'baking powder', quantity: 10, unit: 'g' }
       ],
       directions: [
         `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.`,
@@ -34,12 +34,12 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
       cook_time: 25,
       servings: 8,
       ingredients: [
-        '200g chocolate',
-        '200g sugar',
-        '125g butter',
-        '4 eggs',
-        '125g flour',
-        '5g baking powder'
+        { name: 'chocolate', quantity: 200, unit: 'g' },
+        { name: 'sugar', quantity: 200, unit: 'g' },
+        { name: 'butter', quantity: 125, unit: 'g' },
+        { name: 'egg', quantity: 4, unit: 'pcs' },
+        { name: 'flour', quantity: 125, unit: 'g' },
+        { name: 'baking powder', quantity: 5, unit: 'g' }
       ],
       directions: [
         `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.`,
@@ -54,13 +54,13 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
       cook_time: 25,
       servings: 8,
       ingredients: [
-        '6 pears',
-        '180g sugar',
-        '10g butter',
-        '6 eggs',
-        '50cl liquid cream',
-        '25cl milk',
-        '125g flour'
+        { name: 'pear', quantity: 6, unit: 'pcs' },
+        { name: 'sugar', quantity: 180, unit: 'g' },
+        { name: 'butter', quantity: 10, unit: 'g' },
+        { name: 'egg', quantity: 6, unit: 'pcs' },
+        { name: 'liquid cream', quantity: 50, unit: 'cl' },
+        { name: 'milk', quantity: 25, unit: 'cl' },
+        { name: 'flour', quantity: 125, unit: 'g' }
       ],
       directions: [
         `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.`,
@@ -75,12 +75,12 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
       cook_time: 50,
       servings: 10,
       ingredients: [
-        '3 ripe bananas',
-        '150g sugar',
-        '80g butter',
-        '2 eggs',
-        '200g flour',
-        '10g baking powder'
+        { name: 'ripe banana', quantity: 3, unit: 'pcs' },
+        { name: 'sugar', quantity: 150, unit: 'g' },
+        { name: 'butter', quantity: 80, unit: 'g' },
+        { name: 'egg', quantity: 2, unit: 'pcs' },
+        { name: 'flour', quantity: 200, unit: 'g' },
+        { name: 'baking powder', quantity: 10, unit: 'g' }
       ],
       directions: [
         `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.`,
@@ -95,12 +95,12 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
       cook_time: 45,
       servings: 6,
       ingredients: [
-        '4 apples',
-        '200g flour',
-        '100g butter',
-        '100g sugar',
-        '1 egg',
-        '5g cinnamon'
+        { name: 'apple', quantity: 4, unit: 'pcs' },
+        { name: 'flour', quantity: 200, unit: 'g' },
+        { name: 'butter', quantity: 100, unit: 'g' },
+        { name: 'sugar', quantity: 100, unit: 'g' },
+        { name: 'egg', quantity: 1, unit: 'pcs' },
+        { name: 'cinnamon', quantity: 5, unit: 'g' }
       ],
       directions: [
         `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.`,
@@ -115,12 +115,12 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
       cook_time: 20,
       servings: 12,
       ingredients: [
-        '250g flour',
-        '120g sugar',
-        '80g butter',
-        '2 eggs',
-        '15cl milk',
-        '10g baking powder'
+        { name: 'flour', quantity: 250, unit: 'g' },
+        { name: 'sugar', quantity: 120, unit: 'g' },
+        { name: 'butter', quantity: 80, unit: 'g' },
+        { name: 'egg', quantity: 2, unit: 'pcs' },
+        { name: 'milk', quantity: 15, unit: 'cl' },
+        { name: 'baking powder', quantity: 10, unit: 'g' }
       ],
       directions: [
         `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.`,
@@ -135,12 +135,12 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
       cook_time: 10,
       servings: 4,
       ingredients: [
-        '200g flour',
-        '25cl milk',
-        '2 eggs',
-        '30g sugar',
-        '20g butter',
-        '1 pinch of salt'
+        { name: 'flour', quantity: 200, unit: 'g' },
+        { name: 'milk', quantity: 25, unit: 'cl' },
+        { name: 'egg', quantity: 2, unit: 'pcs' },
+        { name: 'sugar', quantity: 30, unit: 'g' },
+        { name: 'butter', quantity: 20, unit: 'g' },
+        { name: 'salt', quantity: 1, unit: 'pinch' }
       ],
       directions: [
         `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.`,
@@ -155,12 +155,12 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
       cook_time: 0,
       servings: 6,
       ingredients: [
-        '250g mascarpone',
-        '3 eggs',
-        '80g sugar',
-        '200g ladyfingers',
-        '20cl coffee',
-        '10g cocoa powder'
+        { name: 'mascarpone', quantity: 250, unit: 'g' },
+        { name: 'egg', quantity: 3, unit: 'pcs' },
+        { name: 'sugar', quantity: 80, unit: 'g' },
+        { name: 'ladyfingers', quantity: 200, unit: 'g' },
+        { name: 'coffee', quantity: 20, unit: 'cl' },
+        { name: 'cocoa powder', quantity: 10, unit: 'g' }
       ],
       directions: [
         `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.`,
@@ -175,12 +175,12 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
       cook_time: 40,
       servings: 8,
       ingredients: [
-        '300g grated carrots',
-        '150g sugar',
-        '120g butter',
-        '3 eggs',
-        '200g flour',
-        '10g baking powder'
+        { name: 'grated carrots', quantity: 300, unit: 'g' },
+        { name: 'sugar', quantity: 150, unit: 'g' },
+        { name: 'butter', quantity: 120, unit: 'g' },
+        { name: 'egg', quantity: 3, unit: 'pcs' },
+        { name: 'flour', quantity: 200, unit: 'g' },
+        { name: 'baking powder', quantity: 10, unit: 'g' }
       ],
       directions: [
         `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.`,
@@ -195,12 +195,12 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
       cook_time: 60,
       servings: 10,
       ingredients: [
-        '500g cream cheese',
-        '150g sugar',
-        '3 eggs',
-        '200g biscuits',
-        '80g butter',
-        '1 tsp vanilla extract'
+        { name: 'cream cheese', quantity: 500, unit: 'g' },
+        { name: 'sugar', quantity: 150, unit: 'g' },
+        { name: 'egg', quantity: 3, unit: 'pcs' },
+        { name: 'biscuits', quantity: 200, unit: 'g' },
+        { name: 'butter', quantity: 80, unit: 'g' },
+        { name: 'vanilla extract', quantity: 1, unit: 'tsp' }
       ],
       directions: [
         `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.`,
