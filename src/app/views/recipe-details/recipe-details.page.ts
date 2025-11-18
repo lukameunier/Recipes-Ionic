@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonCol, IonRow, IonButton, IonLabel, IonImg, IonList, IonIcon, IonCard, IonFabButton } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonCol, IonRow, IonButton, IonLabel, IonImg, IonList, IonIcon, IonCard, IonFabButton } from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
 import { RecipesRepository } from 'src/app/repository/recipes-repository';
 import { Recipe } from 'src/app/data/recipe';
@@ -17,7 +17,7 @@ import { add, remove, imagesSharp } from 'ionicons/icons';
   styleUrls: ['./recipe-details.page.scss'],
   standalone: true,
   imports: [
-    IonContent, IonHeader, IonTitle, IonToolbar,
+    IonContent, IonHeader, IonTitle,
     CommonModule, FormsModule, IonCol, IonRow,
     IonButton, IonLabel, IonImg, IonList, IonIcon,
     RouterLink, IonCard, IonFabButton

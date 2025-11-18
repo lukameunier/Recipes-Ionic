@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonInput } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonItem, IonInput } from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
 import { RecipesRepository } from 'src/app/repository/recipes-repository';
 import { Recipe } from 'src/app/data/recipe';
@@ -11,7 +11,7 @@ import { Recipe } from 'src/app/data/recipe';
   templateUrl: './edit-recipe.page.html',
   styleUrls: ['./edit-recipe.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonItem, IonInput]
+  imports: [IonContent, IonHeader, IonTitle, CommonModule, FormsModule, IonItem, IonInput]
 })
 export class EditRecipePage implements OnInit {
   recipe!: Recipe;

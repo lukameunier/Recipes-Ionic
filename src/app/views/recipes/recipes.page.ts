@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonCol } from '@ionic/angular/standalone';
+import { IonContent, IonTitle, IonCol } from '@ionic/angular/standalone';
 import { RecipesRepository } from 'src/app/repository/recipes-repository';
 import { RecipeComponent} from 'src/app/views/recipe/recipe.component';
 import { Recipe } from 'src/app/data/recipe';
@@ -12,7 +12,7 @@ import { RouterLink } from "@angular/router";
   templateUrl: './recipes.page.html',
   styleUrls: ['./recipes.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonCol, RecipeComponent, RouterLink]
+  imports: [IonContent, IonTitle, CommonModule, FormsModule, IonCol, RecipeComponent, RouterLink]
 })
 export class RecipesPage {
 

@@ -1,10 +1,7 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Recipes</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-title>Your recipes</ion-title>
+
   <ion-col>
     @for (recipe of recipes; track recipe.name) {
       <app-recipe [recipe]="recipe" [routerLink]="['../recipe-details', recipe.name]"></app-recipe>
