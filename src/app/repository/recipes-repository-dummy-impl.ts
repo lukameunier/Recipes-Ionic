@@ -213,4 +213,11 @@ export class RecipesRepositoryDummyImpl extends RecipesRepository {
   public getRecipe(name: string): Recipe | undefined {
     return this.recipes.find(recipe => recipe.name === name);
   }
+
+  public updateRecipeImage(name: string, img: string): void {
+    const recipe = this.recipes.find(recipe => recipe.name === name);
+    if (recipe) {
+      recipe.img = img;
+    }
+  }
 }

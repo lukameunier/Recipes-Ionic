@@ -44,9 +44,6 @@ export class RecipeDetailsPage implements OnInit {
   recipe: Recipe | undefined = undefined;
   currentServings = 0;
 
-  imageUrl: string | null = null;
-
-  // 👉 état de ton popup custom
   showImagePopup = false;
 
   constructor(
@@ -62,7 +59,6 @@ export class RecipeDetailsPage implements OnInit {
       this.recipe = this.recipesRepository.getRecipe(name);
       if (this.recipe) {
         this.currentServings = this.recipe.servings;
-        this.imageUrl = (this.recipe as any).image || (this.recipe as any).imageUrl || this.recipe.img || null;
       }
     }
   }
@@ -88,12 +84,10 @@ export class RecipeDetailsPage implements OnInit {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
-  // 👉 ouvre ton popup custom
   openImagePopup() {
     this.showImagePopup = true;
   }
 
-  // 👉 ferme ton popup custom
   closeImagePopup() {
     this.showImagePopup = false;
   }
@@ -110,10 +104,6 @@ export class RecipeDetailsPage implements OnInit {
 
   private async pickImage(source: CameraSource) {
     try {
-      if (Capacitor.getPlatform() !== 'web') {
-        await Camera.requestPermissions();
-      }
-
       const image = await Camera.getPhoto({
         quality: 80,
         allowEditing: false,
@@ -121,14 +111,15 @@ export class RecipeDetailsPage implements OnInit {
         source
       });
 
-      this.imageUrl = image.dataUrl ?? null;
+      if (this.recipe && image.dataUrl) {
+        this.recipe.img = image.dataUrl;
 
-      if (this.recipe && this.imageUrl) {
-        (this.recipe as any).image = this.imageUrl;
+        this.recipesRepository.updateRecipeImage(this.recipe.name, image.dataUrl);
       }
 
     } catch (err) {
       console.log('User cancelled or error: ', err);
     }
   }
+
 }
