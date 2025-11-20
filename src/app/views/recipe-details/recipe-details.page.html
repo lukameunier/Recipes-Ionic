@@ -28,12 +28,12 @@
 
       <ion-card class="img_edit_button_container">
         <ion-img
-          [src]="recipe?.img"
+          [src]="imageUrl || recipe?.img"
           class="recipe_img">
         </ion-img>
 
         <div class="edit_button_container">
-          <ion-fab-button size="small" class="edit_fab">
+          <ion-fab-button size="small" class="edit_fab" (click)="openImagePopup()">
             <ion-icon name="images-sharp"></ion-icon>
           </ion-fab-button>
         </div>
@@ -59,4 +59,27 @@
       }
     </ion-list>
   </ion-col>
+
+  @if (showImagePopup) {
+    <div class="custom-popup-backdrop" (click)="closeImagePopup()">
+      <div class="custom-popup" (click)="$event.stopPropagation()">
+        <h2>Changer l’image</h2>
+
+        <button class="popup-btn" (click)="pickFromCamera()">
+          <ion-icon name="camera"></ion-icon>
+          <span>Prendre une photo</span>
+        </button>
+
+        <button class="popup-btn" (click)="pickFromGallery()">
+          <ion-icon name="image"></ion-icon>
+          <span>Choisir dans la galerie</span>
+        </button>
+
+        <button class="popup-btn cancel" (click)="closeImagePopup()">
+          <ion-icon name="close"></ion-icon>
+          <span>Annuler</span>
+        </button>
+      </div>
+    </div>
+  }
 </ion-content>

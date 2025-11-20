@@ -72,3 +72,93 @@ ion-label {
 .minus_button {
   --border-radius: #{$corner-radius} 0 0 #{$corner-radius};
 }
+
+.custom-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: center;
+
+  z-index: 9999;
+
+  animation: popup-backdrop-fade 0.2s ease-out;
+}
+
+@keyframes popup-backdrop-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.custom-popup {
+  width: 100%;
+  background: var(--ion-background-color, #fff);
+  padding: 20px 18px;
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.25);
+
+  text-align: center;
+
+  animation: popup-slide-up 0.25s cubic-bezier(0.15, 0.85, 0.3, 1);
+}
+
+@keyframes popup-slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.custom-popup h2 {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.popup-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin: 8px 0;
+  padding: 12px 14px;
+
+  border-radius: 12px;
+  border: none;
+
+  background: var(--ion-color-primary);
+  color: white;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: background 0.15s ease;
+}
+
+.popup-btn:hover {
+  background: var(--ion-color-primary-shade);
+}
+
+.popup-btn.cancel {
+  background: var(--ion-color-medium);
+  color: white;
+}
+
+.popup-btn.cancel:hover {
+  background: var(--ion-color-medium-shade);
+}
+
+.popup-btn ion-icon {
+  font-size: 19px;
+}
