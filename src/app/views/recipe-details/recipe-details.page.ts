@@ -76,7 +76,7 @@ export class RecipeDetailsPage implements OnInit {
       return ingredient.quantity;
     }
     const baseServings = this.recipe.servings;
-    return ingredient.quantity * this.currentServings / baseServings;
+    return Math.ceil(ingredient.quantity * this.currentServings / baseServings);
   }
 
   capitalizeFirst(str: string): string {
