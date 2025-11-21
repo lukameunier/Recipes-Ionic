@@ -24,15 +24,31 @@
     [(ngModel)]="recipe.servings">
   </ion-input>
 
+  <ion-row>
+    <ion-label class="ingredients_label">Ingredients</ion-label>
+    <ion-checkbox labelPlacement="end" color="secondary" (ionChange)="onCheckboxChange($event)">Sort by name</ion-checkbox>
+  </ion-row>
 
-  @for (ingredient of recipe.ingredients; track ingredient.name) {
-    <ion-item>
-      <ion-input
-        label="{{ ingredient.name }} ({{ ingredient.unit }})"
-        labelPlacement="stacked"
-        [(ngModel)]="recipe.ingredients[$index].quantity">
-      </ion-input>
-    </ion-item>
-  }
+
+  <ion-row class="ingredients_row">
+    @for (ingredient of recipe.ingredients; track ingredient.name; let i = $index) {
+      <ion-item>
+        <ion-input
+          label="{{ ingredient.name }} ({{ ingredient.unit }})"
+          labelPlacement="stacked"
+          [(ngModel)]="recipe.ingredients[i].quantity">
+        </ion-input>
+      </ion-item>
+
+      <ion-button expand="full" (click)="deleteIngredient(i)" class="delete_button">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    }
+  </ion-row>
+
+  <ion-button expand="full" (click)="addIngredient()" class="add_button">
+    <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+    Add Ingredient
+  </ion-button>
 
 </ion-content>

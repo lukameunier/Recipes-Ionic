@@ -25,7 +25,6 @@ import { addIcons } from 'ionicons';
 import { add, remove, imagesSharp, close, camera, image } from 'ionicons/icons';
 
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
-import { Capacitor } from '@capacitor/core';
 
 @Component({
   selector: 'app-recipe-details',
