@@ -7,7 +7,7 @@ import { RecipesRepository } from 'src/app/repository/recipes-repository';
 import { Recipe } from 'src/app/data/recipe';
 
 import { addIcons } from 'ionicons';
-import { trash } from 'ionicons/icons';
+import { trash, checkmark, close } from 'ionicons/icons';
 import { Ingredient } from 'src/app/data/ingredient';
 
 @Component({
@@ -22,11 +22,21 @@ export class EditRecipePage implements OnInit {
   recipe!: Recipe;
   originalIngredients!: Ingredient[];
 
+  checkedItems = []
+
+  addIngredient = false
+
+  newIngredient: Ingredient = {
+    name: '',
+    quantity: 0,
+    unit: ''
+  };
+
   constructor(
     private recipesRepository: RecipesRepository,
     private route: ActivatedRoute
   ) {
-    addIcons({ trash });
+    addIcons({ trash, checkmark, close });
   }
 
   ngOnInit() {
@@ -41,13 +51,6 @@ export class EditRecipePage implements OnInit {
     }
   }
 
-  deleteIngredient(index: number) {
-    this.recipe!.ingredients.splice(index, 1);
-  }
-
-  checkedItems = []
-
-
   onCheckboxChange(event: any) {
     if (event.detail.checked) {
       this.recipe.ingredients.sort((a, b) =>
@@ -58,7 +61,31 @@ export class EditRecipePage implements OnInit {
     }
   }
 
-  addIngredient() {
-    this.recipe.ingredients.push({ name: '', quantity: 0, unit: '' });
+  deleteIngredient(index: number) {
+    this.recipe!.ingredients.splice(index, 1);
+  }
+
+  addIngredientPopUp() {
+    this.newIngredient = {
+      name: '',
+      quantity: 0,
+      unit: ''
+    };
+    this.addIngredient = true;
+  }
+
+  closeAddIngredientPopup() {
+    this.addIngredient = false;
+  }
+
+  confirmAddIngredient() {
+    if (!this.newIngredient.name || !this.newIngredient.unit) {
+      return;
+    }
+
+    this.recipe.ingredients.push({ ...this.newIngredient });
+    this.originalIngredients = [...this.recipe.ingredients]; 
+
+    this.addIngredient = false;
   }
 }
