@@ -1,8 +1,136 @@
+.recipe-card {
+  margin: 16px auto 24px;
+  padding: 24px 18px 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
 ion-title {
-  font-weight: bold;
-  margin-top: 30px;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+ion-input {
+  --background: #808080;
+  --border-radius: 8px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 6px;
+  --padding-bottom: 6px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+ion-input::part(native) {
+  border-radius: 8px;
+}
+
+ion-row {
+  width: 100%;
+}
+
+.ingredients_label {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+ion-row:first-of-type {
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+ion-checkbox {
+  --size: 20px;
+  font-size: 0.85rem;
+}
+
+.ingredients_row {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 10px;
+  row-gap: 12px;
+}
+
+.ingredients_row ion-item {
+  --border-radius: 8px;
+  --inner-padding-bottom: 6px;
+  --inner-padding-top: 6px;
+  --inner-padding-start: 10px;
+  --inner-padding-end: 10px;
+  --padding-start: 0;
+  --padding-end: 0;
+  --min-height: 56px;
 }
 
 .delete_button {
-  --background: red;
+  --background: #d04f4f;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  align-self: center;
+}
+
+
+.delete_button ion-icon {
+  font-size: 1.3rem;
+}
+
+.add_button {
+  margin-top: 22px;
+  width: 100%;
+  --border-radius: 999px;
+  font-weight: 500;
+}
+
+.add_button ion-icon {
+  margin-right: 4px;
+}
+
+.custom-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.custom-popup {
+  background-color: var(--ion-card-background, var(--ion-background-color, #ffffff));
+  padding: 18px 18px 16px;
+  border-radius: 16px;
+  max-width: 320px;
+  width: 90%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  color: var(--ion-text-color);
+}
+
+
+.custom-popup h2 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.custom-popup ion-input {
+  margin-top: 6px;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.popup-actions ion-button span {
+  margin-left: 4px;
 }

@@ -1,94 +1,96 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense"></ion-header>
 
-  <ion-title>{{recipe.name}}</ion-title>
+  <div class="recipe-card">
+    <ion-title>{{recipe.name}}</ion-title>
 
-  <ion-input
-    label="Prep Time (mins)"
-    labelPlacement="stacked"
-    type="number"
-    [(ngModel)]="recipe.prep_time">
-  </ion-input>
+    <ion-input
+      label="Prep Time (mins)"
+      labelPlacement="stacked"
+      type="number"
+      [(ngModel)]="recipe.prep_time">
+    </ion-input>
 
-  <ion-input
-    label="Cook Time (mins)"
-    labelPlacement="stacked"
-    type="number"
-    [(ngModel)]="recipe.cook_time">
-  </ion-input>
+    <ion-input
+      label="Cook Time (mins)"
+      labelPlacement="stacked"
+      type="number"
+      [(ngModel)]="recipe.cook_time">
+    </ion-input>
 
-  <ion-input
-    label="Serving"
-    labelPlacement="stacked"
-    type="number"
-    [(ngModel)]="recipe.servings">
-  </ion-input>
+    <ion-input
+      label="Serving"
+      labelPlacement="stacked"
+      type="number"
+      [(ngModel)]="recipe.servings">
+    </ion-input>
 
-  <ion-row>
-    <ion-label class="ingredients_label">Ingredients</ion-label>
-    <ion-checkbox labelPlacement="end" color="secondary" (ionChange)="onCheckboxChange($event)">Sort by name</ion-checkbox>
-  </ion-row>
+    <ion-row>
+      <ion-label class="ingredients_label">Ingredients</ion-label>
+      <ion-checkbox labelPlacement="end" color="secondary" (ionChange)="onCheckboxChange($event)">Sort by name</ion-checkbox>
+    </ion-row>
 
 
-  <ion-row class="ingredients_row">
-    @for (ingredient of recipe.ingredients; track ingredient.name; let i = $index) {
-      <ion-item>
-        <ion-input
-          label="{{ ingredient.name }} ({{ ingredient.unit }})"
-          labelPlacement="stacked"
-          [(ngModel)]="recipe.ingredients[i].quantity">
-        </ion-input>
-      </ion-item>
+    <ion-row class="ingredients_row">
+      @for (ingredient of recipe.ingredients; track ingredient.name; let i = $index) {
+        <ion-item>
+          <ion-input
+            label="{{ ingredient.name }} ({{ ingredient.unit }})"
+            labelPlacement="stacked"
+            [(ngModel)]="recipe.ingredients[i].quantity">
+          </ion-input>
+        </ion-item>
 
-      <ion-button expand="full" (click)="deleteIngredient(i)" class="delete_button">
-        <ion-icon slot="icon-only" name="trash"></ion-icon>
-      </ion-button>
-    }
-  </ion-row>
+        <ion-button expand="full" (click)="deleteIngredient(i)" class="delete_button">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+      }
+    </ion-row>
 
-  <ion-button expand="full" (click)="addIngredientPopUp()" class="add_button">
-    <ion-icon slot="start" name="add-circle-outline"></ion-icon>
-    Add Ingredient
-  </ion-button>
+    <ion-button expand="full" (click)="addIngredientPopUp()" class="add_button">
+      <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+      Add Ingredient
+    </ion-button>
 
-  @if (addIngredient) {
-    <div class="custom-popup-backdrop">
-      <div class="custom-popup" (click)="$event.stopPropagation()">
-        <h2>Renseigner les ingrédients</h2>
+    @if (addIngredient) {
+      <div class="custom-popup-backdrop">
+        <div class="custom-popup" (click)="$event.stopPropagation()">
+          <h2>Renseigner les ingrédients</h2>
 
-        <ion-input
-          label="Name"
-          labelPlacement="stacked"
-          type="text"
-          [(ngModel)]="newIngredient.name">
-        </ion-input>
+          <ion-input
+            label="Name"
+            labelPlacement="stacked"
+            type="text"
+            [(ngModel)]="newIngredient.name">
+          </ion-input>
 
-        <ion-input
-          label="Quantity"
-          labelPlacement="stacked"
-          type="number"
-          [(ngModel)]="newIngredient.quantity">
-        </ion-input>
+          <ion-input
+            label="Quantity"
+            labelPlacement="stacked"
+            type="number"
+            [(ngModel)]="newIngredient.quantity">
+          </ion-input>
 
-        <ion-input
-          label="Unit"
-          labelPlacement="stacked"
-          type="text"
-          [(ngModel)]="newIngredient.unit">
-        </ion-input>
+          <ion-input
+            label="Unit"
+            labelPlacement="stacked"
+            type="text"
+            [(ngModel)]="newIngredient.unit">
+          </ion-input>
 
-        <div class="popup-actions">
-          <ion-button fill="clear" (click)="closeAddIngredientPopup()">
-            <ion-icon name="close"></ion-icon>
-            <span>Fermer</span>
-          </ion-button>
+          <div class="popup-actions">
+            <ion-button fill="clear" (click)="closeAddIngredientPopup()">
+              <ion-icon name="close"></ion-icon>
+              <span>Fermer</span>
+            </ion-button>
 
-          <ion-button (click)="confirmAddIngredient()">
-            <ion-icon name="checkmark"></ion-icon>
-            <span>Ajouter</span>
-          </ion-button>
+            <ion-button (click)="confirmAddIngredient()">
+              <ion-icon name="checkmark"></ion-icon>
+              <span>Ajouter</span>
+            </ion-button>
+          </div>
         </div>
       </div>
-    </div>
-  }
+    }
+  </div>
 </ion-content>
